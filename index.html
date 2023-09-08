@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formulario</title>
+    <!--script src="ejemplo.js"> </script-->
+    <script>
+        function mostrarDatos() {
+            vapellido = document.getElementById("apellido").value;
+            vnombre = document.getElementById("nombre").value;
+            vdni = document.getElementById("dni").value;
+            vf_nacimiento = document.getElementById("f_nacimiento").value;
+            vdomicilio = document.getElementById("domicilio").value;
+            vlocalidad = document.getElementById("localidad").value;
+            vnivel1 = document.getElementById("nivel1").value;
+            vnivel2 = document.getElementById("nivel2").value;
+            vnivel3 = document.getElementById("nivel3").value;
+            vnivel4 = document.getElementById("nivel4").value;
+
+
+
+            /* Imprime de los datos */
+            document.write("Los datos ingresados fueron: <br/>");
+            document.write("Apellido: " + vapellido + "<br/>");
+            document.write("Nombre: " + vnombre + "<br/>");
+            document.write("Dni: " + vdni + "<br/>");
+            document.write("f_nacimiento: " + vf_nacimiento + "<br/>");
+            document.write("Domicilio: " + vdomicilio + "<br/>");
+            document.write("Localidad: " + vlocalidad + "<br/>");
+            document.write("nivel de español: " + vnivel1 + "<br/>");
+            document.write("Nivel de ingles: " + vnivel2 + "<br/>");
+            document.write("Nivel de frances: " + vnivel3 + "<br/>");
+            document.write("Nivel de chino: " + vnivel4 + "<br/>");
+
+
+            /*******************************************************/
+            const radios = document.getElementsByName("idioma");
+
+            for (var i = 0; i < radios.length; i++) {
+                if (radios[i].checked) {
+                    var vvgen = radios[i].value;
+
+                    break;
+                }
+            }
+            /**********************************************/
+            document.write("Español: " + vespañol + "<br/>");
+            document.write("Ingles: " + vingles + "<br/>");
+            document.write("Frances: " + vfrances + "<br/>");
+            document.write("Chino: " + vchino + "<br/>");
+
+            document.write("<br/><strong>Gracias por sus datos</strong>");
+
+        }
+    </script>
+    <link rel="stylesheet" href="estilo_envio_datos_formulario.css">
+</head>
+
+<body>
+
+    <h1>Formulario de carga de datos</h1>
+
+    <form action="" method="POST">
+
+        <label for="apellido">Apellido:</label>
+        <input type="text" placeholder="Escribe tu apellido" id="apellido">
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" placeholder="Esbribe tu nombre" id="nombre">
+
+        <br><br>
+
+        <label for="dni">Nro de DNI:</label>
+        <input type="number" id="dni">
+        <label for="f_nacimiento">Fecha de nacimiento:</label>
+        <input type="date" id="f_nacimiento">
+
+        <br><br>
+
+        <label for="domicilio">Domicilio:</label>
+        <input type="text" id="domicilio">
+        <label for="localidad">Localidad:</label>
+        <input type="text" id="localidad">
+
+        <br><br>
+
+        <div class="idiomas">
+            <b>
+                Idiomas
+            </b>
+        </div>
+
+        <br><br>
+
+        <div class="conocimientos">
+            <b>
+                Nivel de conocimientos
+            </b>
+        </div>
+
+        <br><br>
+
+        <div class="respañol">
+            <input type="radio" id="español">
+            <label for="español">Español</label>
+        </div>
+
+        <div class="ringles">
+            <input type="radio" id="ingles">
+            <label for="ingles">Ingles</label>
+        </div>
+
+        <div class="rfrances">
+            <input type="radio" id="frances">
+            <label for="frances">Frances</label>
+        </div>
+
+        <div class="rchino">
+            <input type="radio" id="chino">
+            <label for="chino">Chino</label>
+        </div>
+
+
+        <div class="rango1">
+            <label for="nivel1">0 --------- 5 -------- 10</label>
+            <br>
+            <input type="range" id="nivel1">
+        </div>
+
+
+        <div class="rango2">
+            <label for="nivel2">0 --------- 5 -------- 10</label>
+            <br>
+            <input type="range" id="nivel2">
+        </div>
+
+
+        <div class="rango3">
+            <label for="nivel3">0 --------- 5 -------- 10</label>
+            <br>
+            <input type="range" id="nivel3">
+        </div>
+
+
+        <div class="rango4">
+            <label for="nivel4">0 --------- 5 -------- 10</label>
+            <br>
+            <input type="range" id="nivel4">
+        </div>
+
+
+        <div class="botones">
+            <button type="submit" onClick="mostrarDatos()" id="botones">Enviar y Mostrar</button>
+            <button type="reset" id="botones">Borrar</button>
+        </div>
+
+
+    </form>
+</body>
+
+</html>
